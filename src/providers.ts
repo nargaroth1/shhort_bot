@@ -27,13 +27,12 @@ export class ProviderManager {
                     temperature: 0.2,
                     max_tokens: 512,
                     model: provider.default_model,
-                }).then(async (res) => {
+                }).then((res) => {
                     const msg = `${
                         res.choices[0]?.message?.content || ""
                     }`;
-                    ctx.editMessageText(await marked.parseInline(msg), {
-                        inline_message_id: ctx.inlineMessageId,
-                        parse_mode: "HTML",
+                    ctx.editMessageText(msg, {
+                        inline_message_id: ctx.inlineMessageId
                     });
                 }).catch((ex) => {
                     ctx.editMessageText(`Got an error: ${ex}`, {
