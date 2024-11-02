@@ -1,0 +1,11 @@
+{
+  "tasks": {
+    "dev": "deno run --allow-all --watch src/main.ts"
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1",
+    "telegraf": "npm:telegraf@4.16.3",
+    "OpenAI": "npm:openai@4.68.4",
+    "marked": "npm:marked@14.1.3"
+  }
+}
